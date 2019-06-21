@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Automata type="PDA">
+    <Alphabets>
+        <Input_alphabets numberOfInputAlphabets="2">
+            <alphabet letter="a" />
+            <alphabet letter="b" />
+        </Input_alphabets>
+        <Stack_alphabets numberOfStackAlphabets="2">
+            <alphabet letter="0" />
+            <alphabet letter="z" />
+            <tail letter="z" />
+        </Stack_alphabets>
+    </Alphabets>
+    <States numberOfStates="3">
+        <state name="q0" positionX="20" positionY="20" />
+        <state name="q1" positionX="40" positionY="20" />
+        <state name="q2" positionX="60" positionY="20" />
+        <initialState name="q0" />
+        <FinalStates numberOfFinalStates="1">
+            <finalState name="q2" />
+        </FinalStates>
+    </States>
+    <Transitions numberOfTrans="5">
+        <transition name="tr1" source="q0" destination="q0" input="a" stackRead="z" stackWrite="0z" />
+        <transition name="tr2" source="q0" destination="q0" input="a" stackRead="a" stackWrite="00" />
+        <transition name="tr3" source="q0" destination="q1" input="b" stackRead="0" stackWrite="" />
+        <transition name="tr4" source="q1" destination="q1" input="b" stackRead="0" stackWrite="" />
+        <transition name="tr5" source="q1" destination="q2" input="lambda" stackRead="z" stackWrite="Az" />
+    </Transitions>
+</Automata>
